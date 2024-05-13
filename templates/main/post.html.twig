@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="mt-4">
+        {{ form_start(form) }}
+        <div class="form-group">
+            {{ form_label(form.name, 'Introduce Nombre') }}
+            {{ form_widget(form.name, {'attr': {'type': 'text', 'class': 'form-control', 'placeholder': 'Nombre'}}) }}
+        </div>
+        <div class="form-group">
+            {{ form_label(form.mail, 'Introduce Email') }}
+            {{ form_widget(form.mail, {'attr': {'type': 'email', 'class': 'form-control', 'placeholder': 'ejemplo@dominio.com', 'pattern': '.{3,}@.{3,}', 'required': 'required'}}) }}
+        </div>
+        <div class="form-group">
+            {{ form_label(form.phone, 'Introduce Teléfono') }}
+            {{ form_widget(form.phone, {'attr': {'type': 'tel', 'class': 'form-control', 'placeholder': '123456789', 'pattern': '[0-9]{9}', 'required': 'required'}}) }}
+
+        </div>
+        <div class="form-group">
+            {{ form_label(form.type, 'Selecciona el Tipo de Proveedor') }}
+            {{ form_widget(form.type, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            {{ form_label(form.active, 'Activo') }}
+            {{ form_widget(form.active, {'attr': {'class': 'form-check-input'}}) }}
+        </div>
+        {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary mt-2'}}) }}
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
